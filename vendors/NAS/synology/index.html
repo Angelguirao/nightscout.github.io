@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nightscout in your Synology NAS &mdash; Nightscout Documentation  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/NS-logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="Migration?" href="../../heroku/migrate/" />
+    <link rel="prev" title="Building Nightscout with Docker" href="../../VPS/docker/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../" class="icon icon-home">
+            Nightscout Documentation
+              <img src="../../../_static/we are not waiting vertical.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../uploader/uploaders/">Supported Uploaders</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CREATE YOUR NIGHTSCOUT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/new_user/">New Nightscout Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/wizard/">Help me choose</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CREATE YOUR DATABASE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/database/">Choose your database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mongodb/atlas/">MongoDB Atlas Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../railway/database/">Railway Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../northflank/database/">Northflank Database</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CREATE YOUR WEB APP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/platform/">Choose your platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../azure/new_user/">Nightscout in Azure (Docker)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../northflank/new_user/">Nightscout in Northflank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/new_user/">Nightscout in Render</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../railway/new_user/">Nightscout in Railway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/new_user/">Nightscout in Heroku</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fly.io/new_user/">Nightscout in Fly.io</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SETUP NIGHTSCOUT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/profile_editor/">Setup your Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../uploader/setup/">Setup Uploaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/downloaders/">Setup Downloaders - Followers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/wearable/">Nightscout on your Watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/setup_variables/">Nightscout Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../uploader/xdripcarelink/">xDrip+ for CareLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/dexcom_bridge/">Troubleshoot Dexcom Share</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">USE NIGHTSCOUT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/discover/">Discover your Nightscout site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/reports/">Create Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/security/">Nightscout Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/admin_tools/">Admin Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/close_loop/">Closed loop systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/ifttt/">IFTTT Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/pushover/">Remote notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/troubleshoot/">Troubleshooting Nightscout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/update/">Update Nightscout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/dev_branch/">Deploy another version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/downgrade/">Downgrade Nightscout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ADVANCED DIY</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/advanced/">Advanced Nightscout deployments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VPS/ubuntu/">Building Nightscout in Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VPS/docker/">Building Nightscout with Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Nightscout in your Synology NAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#need-help">Need help?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initial-documents">Initial documents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-history">Version history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#used-components">Used components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#services-to-migrate-from">Services to migrate from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visual-steps">Visual Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-steps">Detailed steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#checks">1 - Checks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-prerequisites">1a - Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-domain">2 - Setup domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-free-ddns">2a - Free DDNS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-own-domain">2b - Own domain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-docker-and-containers">3. Installation Docker and containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-install-docker">3a. Install Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-install-mongo">3b. Install mongo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c-install-mongo-express">3c. Install mongo-express</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-install-nightscout">3d. Install Nightscout</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-settings">4. Network settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-configure-synology-firewall">4a. Configure Synology firewall</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-open-hardware-firewalls">4b. Open hardware firewalls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c-get-ssl-certificate">4c. Get SSL certificate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-configure-reverse-proxy">4d. Configure reverse proxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#e-check-url">4e. Check URL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#heroku-migration">5. (Heroku) Migration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-maintenance-mode">5a. Maintenance Mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-data-migration">5b. Data migration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c-androidaps">5c. AndroidAPS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-xdrip-t1d-patient">5d. xDrip+ T1D patient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#e-xdrip-caregivers">5e. xDrip+ caregivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#f-update-caregivers-medical-personal">5f. Update caregivers (medical, personal, …)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#g-check-documentation">5g. Check documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#h-schedule-maintenance">5h. Schedule maintenance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#i-schedule-clean-up-check">5i. Schedule clean-up check</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-up">6. Clean up</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-heroku">6a. Heroku</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-mongodb">6b. MongoDB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#regular-maintenance">7. Regular maintenance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-patching">7a. Patching</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-3-2-1-back-up">7b. 3-2-1 Back-up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c-test-environment">7c. Test environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-costs">7d. Costs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VENDORS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/migrate/">Migration?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/multiadmin/">Multiple sites and support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../github/update/">Update GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/redeploy/">Redeploy with GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/github/">Troubleshoot GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/atlas/">Troubleshoot MongoDB Atlas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/azure/">Troubleshoot Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/heroku/">Troubleshoot Heroku</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/ecoplan/">Heroku Eco plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/hobbyplan/">Heroku Basic plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/mfa/">Heroku MFA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/upd_stack/">Update the Heroku stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/railway/">Troubleshoot Railway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/fly.io/">Troubleshoot Fly.io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/render/">Troubleshoot Render</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TRANSLATE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../translate/">Google Translate links</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Nightscout Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Nightscout in your Synology NAS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/vendors/NAS/synology.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nightscout-in-your-synology-nas">
+<h1>Nightscout in your Synology NAS<a class="headerlink" href="#nightscout-in-your-synology-nas" title="Permalink to this heading"></a></h1>
+</br>
+<p>Use a translator and have a look here too: <a class="reference external" href="https://t1d.dzienia.pl/nightscout_synology_tutorial/">https://t1d.dzienia.pl/nightscout_synology_tutorial/</a></p>
+</br>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Work in progress</p>
+</div>
+<p>This guide is written after the <a class="reference external" href="https://blog.heroku.com/next-chapter" title="Heroku's Next Chapter">Heroku’s Next Chapter</a> announcement of August 25, 2022. First, I want to put <a class="reference external" href="https://www.heroku.com/" title="Heroku">Heroku</a> in the spotlight. They have had a big contribution to the growth of our do-it-yourself community with their free tier for a long time. Many, many thanks!</p>
+<p>The migration of our three Nightscout sites from <a class="reference external" href="https://www.heroku.com/" title="Heroku">Heroku</a> and <a class="reference external" href="https://www.mongodb.com/atlas" title="MongoDB Atlas">MongoDB Atlas</a> to our Synology is a success. Performed a full data migration for having zero data loss, running multiple Nightscout instances, working URL’s shared with our hospital, I’m syncing my girlfriends data to my xDrip+ follower, using a free Let’s Encrypt certificate and managed to get rid of the NSClient “<em>xhr poll error</em>”, also bought a PositiveSSL Domain Validation certificate for EUR 10 a/year just to see it work (all OK).</p>
+<p>It was a quite intense ride and therefore happy to share the learnings to help others. I will spend time to fill this page incrementally, because having a baby with a fun and busy job really limits your time.</p>
+<section id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this heading"></a></h2>
+<p>Most people who own a Synology a pretty technical, this page is written for that audience. Self-hosting Nightscout on a Synology will be intense in patch management and maintenance, but also have some strong advantages. When you are not that technical, do not have the time to maintain all components or just want someone to do it for you, consider a <a class="reference internal" href="../../../#nightscout-as-a-service"><span class="std std-ref">hosted Nightscout service</span></a>..</p>
+</section>
+<section id="need-help">
+<h2>Need help?<a class="headerlink" href="#need-help" title="Permalink to this heading"></a></h2>
+<p>Before this guide is completely finished? Please use this <a class="reference external" href="https://www.facebook.com/groups/cgminthecloud/posts/5497953650325846/" title="Facebook topic">Facebook topic</a> in Facebook group <a class="reference external" href="https://www.facebook.com/groups/cgminthecloud">CGM in the Cloud</a>. I will monitor it and answer questions whenever possible.</p>
+<section id="initial-documents">
+<h3>Initial documents<a class="headerlink" href="#initial-documents" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1WWq6f_U2BSs3A_Ij312M5OmXCH-BaIxdC6FY3NenlzY/edit">Nightscout on Synology + model, initially for the technically minded only</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1dHswtf6j4xmX0cwDUpUPJIAymSqQyaWnwocKpEkkA_A/">Export data MongoDB Atlas to MongoDB Synology-Docker</a></p></li>
+<li><p><a class="reference external" href="https://t1d-dzienia-pl.translate.goog/nightscout_synology_tutorial/?_x_tr_sl=nl&amp;amp;_x_tr_tl=en&amp;amp;_x_tr_hl=en-US&amp;amp;_x_tr_pto=op,wapp">Nightscout Synology Tutorial using SSH and Portainer</a> as mentioned in <a class="reference external" href="https://www.facebook.com/groups/cgminthecloud/posts/5497953650325846/?comment_id=5499298483524696">this Facebook comment</a>. Definitely a good read, but a different implementation due to SSH and Portainer.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-history">
+<h2>Version history<a class="headerlink" href="#version-history" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://github.com/nightscout/nightscout.github.io/commits/source/docs/vendors/synology" title="history of this page on GitHub">history of this page on GitHub</a> for information.</p>
+</section>
+<section id="used-components">
+<h2>Used components<a class="headerlink" href="#used-components" title="Permalink to this heading"></a></h2>
+<p>For this solution, the components below are used.</p>
+<section id="services-to-migrate-from">
+<h3>Services to migrate from<a class="headerlink" href="#services-to-migrate-from" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.heroku.com/" title="Heroku">Heroku</a></p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/atlas" title="MongoDB Atlas">MongoDB Atlas</a></p></li>
+</ul>
+</section>
+<section id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Hardware router at home</p></li>
+<li><p>Synology</p></li>
+<li><p>UPS Power supply for Synology</p></li>
+<li><p>Android smartphone for T1D patient</p></li>
+<li><p>Android smartphone for caregiver</p></li>
+</ul>
+</section>
+<section id="software">
+<h3>Software<a class="headerlink" href="#software" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://androidaps.readthedocs.io/" title="AndroidAPS, most recent">AndroidAPS, most recent</a> for T1D Patient</p></li>
+<li><p><a class="reference external" href="https://xdrip.readthedocs.io/" title="xDrip+, most recent">xDrip+, most recent</a> for T1D Patient</p></li>
+<li><p><a class="reference external" href="https://xdrip.readthedocs.io/" title="xDrip+, most recent">xDrip+, most recent</a> for caregiver</p></li>
+<li><p>Synology <a class="reference external" href="https://www.synology.com/nl-nl/dsm" title="DiskStation Manager, most recent">DiskStation Manager, most recent</a></p></li>
+<li><p>Docker container <a class="reference external" href="https://hub.docker.com/_/mongo" title="mongo 4.4.17">mongo, v4.4.17</a></p></li>
+<li><p>Docker container <a class="reference external" href="https://hub.docker.com/_/mongo-express" title="mongo-express, latest">mongo-express, latest</a></p></li>
+<li><p>Docker container <a class="reference external" href="https://hub.docker.com/r/nightscout/cgm-remote-monitor" title="Nightscout, latest">Nightscout, latest</a></p></li>
+<li><p>A Nightscout token to provide hospital access to reporting</p></li>
+</ul>
+</section>
+</section>
+<section id="visual-steps">
+<h2>Visual Steps<a class="headerlink" href="#visual-steps" title="Permalink to this heading"></a></h2>
+<p>![Concept of the visual steps](../img/Self host Nightscout v0.4.drawio.png “Concept of the visual steps”)</p>
+</section>
+<section id="detailed-steps">
+<h2>Detailed steps<a class="headerlink" href="#detailed-steps" title="Permalink to this heading"></a></h2>
+<p>Steps correspond to the numbering on the drawing.</p>
+<section id="checks">
+<h3>1 - Checks<a class="headerlink" href="#checks" title="Permalink to this heading"></a></h3>
+<section id="a-prerequisites">
+<h4>1a - Prerequisites<a class="headerlink" href="#a-prerequisites" title="Permalink to this heading"></a></h4>
+</section>
+</section>
+<section id="setup-domain">
+<h3>2 - Setup domain<a class="headerlink" href="#setup-domain" title="Permalink to this heading"></a></h3>
+<section id="a-free-ddns">
+<h4>2a - Free DDNS<a class="headerlink" href="#a-free-ddns" title="Permalink to this heading"></a></h4>
+</section>
+<section id="b-own-domain">
+<h4>2b - Own domain<a class="headerlink" href="#b-own-domain" title="Permalink to this heading"></a></h4>
+</section>
+</section>
+<section id="installation-docker-and-containers">
+<h3>3. Installation Docker and containers<a class="headerlink" href="#installation-docker-and-containers" title="Permalink to this heading"></a></h3>
+<section id="a-install-docker">
+<h4>3a. Install Docker<a class="headerlink" href="#a-install-docker" title="Permalink to this heading"></a></h4>
+</section>
+<section id="b-install-mongo">
+<h4>3b. Install mongo<a class="headerlink" href="#b-install-mongo" title="Permalink to this heading"></a></h4>
+</section>
+<section id="c-install-mongo-express">
+<h4>3c. Install mongo-express<a class="headerlink" href="#c-install-mongo-express" title="Permalink to this heading"></a></h4>
+</section>
+<section id="d-install-nightscout">
+<h4>3d. Install Nightscout<a class="headerlink" href="#d-install-nightscout" title="Permalink to this heading"></a></h4>
+</section>
+</section>
+<section id="network-settings">
+<h3>4. Network settings<a class="headerlink" href="#network-settings" title="Permalink to this heading"></a></h3>
+<section id="a-configure-synology-firewall">
+<h4>4a. Configure Synology firewall<a class="headerlink" href="#a-configure-synology-firewall" title="Permalink to this heading"></a></h4>
+</section>
+<section id="b-open-hardware-firewalls">
+<h4>4b. Open hardware firewalls<a class="headerlink" href="#b-open-hardware-firewalls" title="Permalink to this heading"></a></h4>
+</section>
+<section id="c-get-ssl-certificate">
+<h4>4c. Get SSL certificate<a class="headerlink" href="#c-get-ssl-certificate" title="Permalink to this heading"></a></h4>
+</section>
+<section id="d-configure-reverse-proxy">
+<h4>4d. Configure reverse proxy<a class="headerlink" href="#d-configure-reverse-proxy" title="Permalink to this heading"></a></h4>
+</section>
+<section id="e-check-url">
+<h4>4e. Check URL<a class="headerlink" href="#e-check-url" title="Permalink to this heading"></a></h4>
+</section>
+</section>
+<section id="heroku-migration">
+<h3>5. (Heroku) Migration<a class="headerlink" href="#heroku-migration" title="Permalink to this heading"></a></h3>
+<section id="a-maintenance-mode">
+<h4>5a. Maintenance Mode<a class="headerlink" href="#a-maintenance-mode" title="Permalink to this heading"></a></h4>
+</section>
+<section id="b-data-migration">
+<h4>5b. Data migration<a class="headerlink" href="#b-data-migration" title="Permalink to this heading"></a></h4>
+</section>
+<section id="c-androidaps">
+<h4>5c. AndroidAPS<a class="headerlink" href="#c-androidaps" title="Permalink to this heading"></a></h4>
+<section id="c1-nsclient-url">
+<h5>5c1. NSClient URL<a class="headerlink" href="#c1-nsclient-url" title="Permalink to this heading"></a></h5>
+</section>
+<section id="c2-check-uploads">
+<h5>5c2. Check uploads<a class="headerlink" href="#c2-check-uploads" title="Permalink to this heading"></a></h5>
+</section>
+<section id="c3-backup-settings">
+<h5>5c3. Backup settings<a class="headerlink" href="#c3-backup-settings" title="Permalink to this heading"></a></h5>
+</section>
+</section>
+<section id="d-xdrip-t1d-patient">
+<h4>5d. xDrip+ T1D patient<a class="headerlink" href="#d-xdrip-t1d-patient" title="Permalink to this heading"></a></h4>
+<section id="d1-nightscout-follow-url">
+<h5>5d1. Nightscout Follow URL<a class="headerlink" href="#d1-nightscout-follow-url" title="Permalink to this heading"></a></h5>
+</section>
+<section id="d2-check-uploads">
+<h5>5d2. Check uploads<a class="headerlink" href="#d2-check-uploads" title="Permalink to this heading"></a></h5>
+</section>
+<section id="d3-backup-settings">
+<h5>5d3. Backup settings<a class="headerlink" href="#d3-backup-settings" title="Permalink to this heading"></a></h5>
+</section>
+</section>
+<section id="e-xdrip-caregivers">
+<h4>5e. xDrip+ caregivers<a class="headerlink" href="#e-xdrip-caregivers" title="Permalink to this heading"></a></h4>
+<section id="e1-nightscout-follow-url">
+<h5>5e1. Nightscout Follow URL<a class="headerlink" href="#e1-nightscout-follow-url" title="Permalink to this heading"></a></h5>
+</section>
+<section id="e2-check-processing">
+<h5>5e2. Check processing<a class="headerlink" href="#e2-check-processing" title="Permalink to this heading"></a></h5>
+</section>
+<section id="e3-backup-settings">
+<h5>5e3. Backup settings<a class="headerlink" href="#e3-backup-settings" title="Permalink to this heading"></a></h5>
+</section>
+</section>
+<section id="f-update-caregivers-medical-personal">
+<h4>5f. Update caregivers (medical, personal, …)<a class="headerlink" href="#f-update-caregivers-medical-personal" title="Permalink to this heading"></a></h4>
+</section>
+<section id="g-check-documentation">
+<h4>5g. Check documentation<a class="headerlink" href="#g-check-documentation" title="Permalink to this heading"></a></h4>
+</section>
+<section id="h-schedule-maintenance">
+<h4>5h. Schedule maintenance<a class="headerlink" href="#h-schedule-maintenance" title="Permalink to this heading"></a></h4>
+</section>
+<section id="i-schedule-clean-up-check">
+<h4>5i. Schedule clean-up check<a class="headerlink" href="#i-schedule-clean-up-check" title="Permalink to this heading"></a></h4>
+</section>
+</section>
+<section id="clean-up">
+<h3>6. Clean up<a class="headerlink" href="#clean-up" title="Permalink to this heading"></a></h3>
+<section id="a-heroku">
+<h4>6a. Heroku<a class="headerlink" href="#a-heroku" title="Permalink to this heading"></a></h4>
+</section>
+<section id="b-mongodb">
+<h4>6b. MongoDB<a class="headerlink" href="#b-mongodb" title="Permalink to this heading"></a></h4>
+</section>
+</section>
+<section id="regular-maintenance">
+<h3>7. Regular maintenance<a class="headerlink" href="#regular-maintenance" title="Permalink to this heading"></a></h3>
+<section id="a-patching">
+<h4>7a. Patching<a class="headerlink" href="#a-patching" title="Permalink to this heading"></a></h4>
+<section id="a1-hardware">
+<h5>7a1. Hardware<a class="headerlink" href="#a1-hardware" title="Permalink to this heading"></a></h5>
+</section>
+<section id="a2-software">
+<h5>7a2. Software<a class="headerlink" href="#a2-software" title="Permalink to this heading"></a></h5>
+</section>
+<section id="a3-lifecycle">
+<h5>7a3. Lifecycle<a class="headerlink" href="#a3-lifecycle" title="Permalink to this heading"></a></h5>
+</section>
+</section>
+<section id="b-3-2-1-back-up">
+<h4>7b. 3-2-1 Back-up<a class="headerlink" href="#b-3-2-1-back-up" title="Permalink to this heading"></a></h4>
+</section>
+<section id="c-test-environment">
+<h4>7c. Test environment<a class="headerlink" href="#c-test-environment" title="Permalink to this heading"></a></h4>
+</section>
+<section id="d-costs">
+<h4>7d. Costs<a class="headerlink" href="#d-costs" title="Permalink to this heading"></a></h4>
+<section id="d1-own-domain">
+<h5>7d1. Own domain<a class="headerlink" href="#d1-own-domain" title="Permalink to this heading"></a></h5>
+</section>
+<section id="d2-maintenance">
+<h5>7d2. Maintenance<a class="headerlink" href="#d2-maintenance" title="Permalink to this heading"></a></h5>
+</section>
+<section id="d3-power">
+<h5>7d3. Power<a class="headerlink" href="#d3-power" title="Permalink to this heading"></a></h5>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, #WeAreNotWaiting.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

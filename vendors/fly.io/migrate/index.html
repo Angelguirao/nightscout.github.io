@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Migrate from Heroku to Fly.io &mdash; Nightscout Documentation  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/NS-logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../" class="icon icon-home">
+            Nightscout Documentation
+              <img src="../../../_static/we are not waiting vertical.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../uploader/uploaders/">Supported Uploaders</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CREATE YOUR NIGHTSCOUT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/new_user/">New Nightscout Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/wizard/">Help me choose</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CREATE YOUR DATABASE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/database/">Choose your database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mongodb/atlas/">MongoDB Atlas Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../railway/database/">Railway Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../northflank/database/">Northflank Database</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CREATE YOUR WEB APP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/platform/">Choose your platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../azure/new_user/">Nightscout in Azure (Docker)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../northflank/new_user/">Nightscout in Northflank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/new_user/">Nightscout in Render</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../railway/new_user/">Nightscout in Railway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/new_user/">Nightscout in Heroku</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../new_user/">Nightscout in Fly.io</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SETUP NIGHTSCOUT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/profile_editor/">Setup your Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../uploader/setup/">Setup Uploaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/downloaders/">Setup Downloaders - Followers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/wearable/">Nightscout on your Watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/setup_variables/">Nightscout Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../uploader/xdripcarelink/">xDrip+ for CareLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/dexcom_bridge/">Troubleshoot Dexcom Share</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">USE NIGHTSCOUT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/discover/">Discover your Nightscout site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/reports/">Create Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/security/">Nightscout Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/admin_tools/">Admin Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/close_loop/">Closed loop systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/ifttt/">IFTTT Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/pushover/">Remote notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/troubleshoot/">Troubleshooting Nightscout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/update/">Update Nightscout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/dev_branch/">Deploy another version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/downgrade/">Downgrade Nightscout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ADVANCED DIY</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/advanced/">Advanced Nightscout deployments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VPS/ubuntu/">Building Nightscout in Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VPS/docker/">Building Nightscout with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../NAS/synology/">Nightscout in your Synology NAS</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">VENDORS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/migrate/">Migration?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nightscout/multiadmin/">Multiple sites and support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../github/update/">Update GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/redeploy/">Redeploy with GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/github/">Troubleshoot GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/atlas/">Troubleshoot MongoDB Atlas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/azure/">Troubleshoot Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/heroku/">Troubleshoot Heroku</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/ecoplan/">Heroku Eco plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/hobbyplan/">Heroku Basic plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../heroku/mfa/">Heroku MFA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../update/upd_stack/">Update the Heroku stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/railway/">Troubleshoot Railway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/fly.io/">Troubleshoot Fly.io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshoot/render/">Troubleshoot Render</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TRANSLATE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../translate/">Google Translate links</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Nightscout Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Migrate from Heroku to Fly.io</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/vendors/fly.io/migrate.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="migrate-from-heroku-to-fly-io">
+<h1>Migrate from Heroku to Fly.io<a class="headerlink" href="#migrate-from-heroku-to-fly-io" title="Permalink to this heading"></a></h1>
+</br>
+<div class="seealso admonition">
+<p class="admonition-title">Too complicated? Not what you’re looking for?</p>
+<p>Consider a hosted Nightscout service! Check for easier solutions <a class="reference internal" href="../../../#nightscout-as-a-service"><span class="std std-ref">here</span></a>.</p>
+</div>
+</br>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<h2 class="rubric" id="fly-io">Fly.io</h2>
+<p class="sd-card-text"><img alt="Fly.io" src="../../../_images/Fly.io.png" /></p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Fly.io proposes a simple migration wizard from Heroku] and you can create your new Nightscout site in Fly.io. Managing your site will require the use of a command line utility.</p>
+<p class="sd-card-text"><strong>Pros</strong>:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Nightscout fits in the free tier</p></li>
+<li><p class="sd-card-text">Easy to migrate an existing site from Heroku</p></li>
+</ul>
+<p class="sd-card-text"><strong>Cons</strong>:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Maintaining your site requires the use command line instructions, not very intuitive</strong></p></li>
+<li><p class="sd-card-text">Migrated Heroku sites store variables as secrets</p></li>
+<li><p class="sd-card-text">Relying on the MongoDB Atlas database</p></li>
+</ul>
+</div>
+</div>
+</br>
+<section id="step-1-migrate-your-heroku-app-to-fly-io">
+<h2>Step 1 - Migrate your Heroku app to Fly.io<a class="headerlink" href="#step-1-migrate-your-heroku-app-to-fly-io" title="Permalink to this heading"></a></h2>
+<p>a) Open the Fly.io Heroku migration page <a class="reference external" href="https://fly.io/launch/heroku">https://fly.io/launch/heroku</a>.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM01.png"><img alt="../../../_images/FlyM01.png" src="../../../_images/FlyM01.png" style="width: 400px;" /></a>
+</br>
+<p>b) Click <code class="docutils literal notranslate"><span class="pre">Sign</span> <span class="pre">in</span> <span class="pre">to</span> <span class="pre">Heroku</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM02.png"><img alt="../../../_images/FlyM02.png" src="../../../_images/FlyM02.png" style="width: 400px;" /></a>
+</br>
+<p>c) Enter your Heroku credentials and <code class="docutils literal notranslate"><span class="pre">Log</span> <span class="pre">In</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/UpdateNS15.png"><img alt="../../../_images/UpdateNS15.png" src="../../../_images/UpdateNS15.png" style="width: 400px;" /></a>
+</br>
+<p>d) <code class="docutils literal notranslate"><span class="pre">Allow</span></code> Fly.io to access your Heroku account.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM03.png"><img alt="../../../_images/FlyM03.png" src="../../../_images/FlyM03.png" style="width: 400px;" /></a>
+</br>
+<p>e) In <code class="docutils literal notranslate"><span class="pre">Configure</span> <span class="pre">Heroku</span></code> you should see your name in the organization.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM04.png"><img alt="../../../_images/FlyM04.png" src="../../../_images/FlyM04.png" style="width: 400px;" /></a>
+</br>
+<p>f) For <code class="docutils literal notranslate"><span class="pre">PICK</span> <span class="pre">AN</span> <span class="pre">APP</span> <span class="pre">NAME</span></code> put the name of your new Fly.io Nightscout site (you can put the same than Heroku if you want).</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM05.png"><img alt="../../../_images/FlyM05.png" src="../../../_images/FlyM05.png" style="width: 400px;" /></a>
+</br>
+<p>g) <a class="reference external" href="https://fly.io/docs/reference/regions/"><code class="docutils literal notranslate"><span class="pre">REGION</span></code></a> is the physical location closer to you where the app will run. Leave default.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM06.png"><img alt="../../../_images/FlyM06.png" src="../../../_images/FlyM06.png" style="width: 400px;" /></a>
+</br>
+<p>h) The Heroku app you need to choose here is your Heroku Nightscout app.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM07.png"><img alt="../../../_images/FlyM07.png" src="../../../_images/FlyM07.png" style="width: 400px;" /></a>
+</br>
+<p>i) Click <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">Heroku</span> <span class="pre">app!</span></code></p>
+<a class="reference internal image-reference" href="../../../_images/FlyM08.png"><img alt="../../../_images/FlyM08.png" src="../../../_images/FlyM08.png" style="width: 400px;" /></a>
+</br>
+<p>j) You need to enter a physical identification (to demonstrate you’re not a robot) this will be done using a credit card.<br />
+Select <code class="docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">a</span> <span class="pre">payment</span> <span class="pre">method...</span></code></p>
+<a class="reference internal image-reference" href="../../../_images/FlyM09.png"><img alt="../../../_images/FlyM09.png" src="../../../_images/FlyM09.png" style="width: 400px;" /></a>
+</br>
+<p>k) Enter you credit card information and click <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Card</span></code>. You will be billed 0$ or a bank fee.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM10.png"><img alt="../../../_images/FlyM10.png" src="../../../_images/FlyM10.png" style="width: 400px;" /></a>
+</br>
+<p>l) You should be driven back to the screen shown on step i.<br />
+If you’re not, retry from the beginning and now Fly.io shouldn’t ask for a credit card anymore.</p>
+<p>Deploy will start. Be patient and don’t click anything until it’s complete. It might take up to 20 minutes.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM11.png"><img alt="../../../_images/FlyM11.png" src="../../../_images/FlyM11.png" style="width: 200px;" /></a>
+</br>
+<p>m) When deployment is complete you will see the information of your new Fly.io Nightscout site.<br />
+The App URL is your Nightscout site web address, only it’s ending by <code class="docutils literal notranslate"><span class="pre">.fly.dev</span></code> instead of <code class="docutils literal notranslate"><span class="pre">.herokuapp.com</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM12.png"><img alt="../../../_images/FlyM12.png" src="../../../_images/FlyM12.png" style="width: 400px;" /></a>
+</br>
+<p>n) If you open this URL you will see it’s replicating real time your Heroku Nightscout with the exact same settings.</p>
+</br>
+</section>
+<section id="step-2-remove-the-heroku-webhook-to-fly-io">
+<h2>Step 2 - Remove the Heroku webhook to Fly.io<a class="headerlink" href="#step-2-remove-the-heroku-webhook-to-fly-io" title="Permalink to this heading"></a></h2>
+<p>a) By defaut Fly.io has made a link to Heroku so that whatever happens in Heroku (updates, variables changes, etc…) is mirrored to Fly.io.<br />
+<strong>You don’t want this.<br />
+You need to detach Fly.io from Heroku now.</strong></p>
+<p>Log in Heroku <a class="reference external" href="https://id.heroku.com/login">https://id.heroku.com/login</a></p>
+<a class="reference internal image-reference" href="../../../_images/UpdateNS15.png"><img alt="../../../_images/UpdateNS15.png" src="../../../_images/UpdateNS15.png" style="width: 400px;" /></a>
+</br>
+<p>b) Select your Nightscout app, top right <code class="docutils literal notranslate"><span class="pre">More</span></code>, then <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Webhooks</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM13.png"><img alt="../../../_images/FlyM13.png" src="../../../_images/FlyM13.png" style="width: 800px;" /></a>
+</br>
+<p>c) Scroll down to your webhook, open the menu at the end of the line and <code class="docutils literal notranslate"><span class="pre">Remove</span></code> it.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM14.png"><img alt="../../../_images/FlyM14.png" src="../../../_images/FlyM14.png" style="width: 800px;" /></a>
+</br>
+<p>d) Confirm with <code class="docutils literal notranslate"><span class="pre">Delete</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/FlyM15.png"><img alt="../../../_images/FlyM15.png" src="../../../_images/FlyM15.png" style="width: 500px;" /></a>
+</br>
+<p>Your Fly.io Nightscout is now independent from Heroku.</p>
+</br>
+</section>
+<section id="step-3-backup-your-heroku-variables">
+<h2>Step 3 - Backup your Heroku variables<a class="headerlink" href="#step-3-backup-your-heroku-variables" title="Permalink to this heading"></a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Heroku Variables</p>
+<p>You cannot see your variable values in Fly.io.</br>
+You cannot edit them.</br>
+You MUST have a backup of your Heroku variables for maintenance purposes.</br></p>
+</div>
+<p>Reveal your Heroku Nightscout app <a class="reference internal" href="../../heroku/new_user/#editing-config-vars-in-heroku"><span class="std std-ref">Config Vars</span></a> and copy all variables names and values in a spreadsheet.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Save this information in a safe place!</p>
+</div>
+</br>
+</section>
+<section id="step-4-update-your-uploaders-and-downloaders">
+<h2>Step 4 - Update your uploaders and downloaders<a class="headerlink" href="#step-4-update-your-uploaders-and-downloaders" title="Permalink to this heading"></a></h2>
+<p>Now you will need to update all the devices connected to Nightscout with the new web address.</p>
+<div class="warning admonition">
+<p class="admonition-title">Change the URL!</p>
+<p><strong>Make sure you update the <a class="reference internal" href="../../../uploader/setup/"><span class="doc std std-doc">uploader</span></a> and <a class="reference internal" href="../../../nightscout/downloaders/"><span class="doc std std-doc">follower</span></a> devices with the new <code class="docutils literal notranslate"><span class="pre">fly.dev</span></code> address!</strong></p>
+</div>
+</br>
+<p>To fully test your new Fly.io Nightscout app: put your Heroku app in <a class="reference internal" href="../../../troubleshoot/heroku/#maintenance-mode"><span class="std std-ref">maintenance mode</span></a>.<br />
+If things don’t go as expected, you can disable it and return to Heroku whilst you fix it.<br />
+</br></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, #WeAreNotWaiting.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
